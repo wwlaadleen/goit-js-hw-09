@@ -31,9 +31,9 @@ const options = {
 
 const fp = flatpickr(refs.datePicker, options);
 
-refs.startBtnEl.addEventListener('click', onStartBtnClick);
+refs.startBtnEl.addEventListener('click', startBtnClick);
 
-function onStartBtnClick() {
+function startBtnClick() {
   refs.startBtnEl.setAttribute('disabled', '');
   refs.datePicker.setAttribute('disabled', '');
   Notiflix.Notify.success('Timer has been started');

@@ -4,17 +4,17 @@ const refs = {
   stopBtnEl: document.querySelector('[data-stop]'),
 };
 let bgIntervalId = null;
-refs.startBtnEl.addEventListener('click', onStartBtnClick);
-refs.stopBtnEl.addEventListener('click', onStopBtnClick);
+refs.startBtnEl.addEventListener('click', startBtnClick);
+refs.stopBtnEl.addEventListener('click', stopBtnClick);
 
-function onStartBtnClick() {
+function startBtnClick() {
   refs.startBtnEl.setAttribute('disabled', '');
   bgIntervalId = setInterval(() => {
     refs.bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
   }, 1000);
 }
 
-function onStopBtnClick() {
+function stopBtnClick() {
   refs.startBtnEl.removeAttribute('disabled');
   clearInterval(bgIntervalId);
 }
